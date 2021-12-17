@@ -41,3 +41,7 @@ func generateParagraph(value *sqlparser.SQLVal) *sqlparser.SQLVal {
 func generateIPv4(value *sqlparser.SQLVal) *sqlparser.SQLVal {
 	return sqlparser.NewStrVal([]byte(faker.Internet().IpV4Address()))
 }
+
+func generateBlob(value *sqlparser.SQLVal) *sqlparser.SQLVal {
+	return sqlparser.NewStrVal([]byte(faker.RandomString(len(value.Val))))
+}
